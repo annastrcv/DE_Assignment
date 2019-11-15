@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="CENTER" hgap="10" prefHeight="700.0" prefWidth="1000.0" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de_assignment.Controller">
+    <columnConstraints>
+        <ColumnConstraints maxWidth="1.7976931348623157E308" percentWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="1.7976931348623157E308" percentHeight="100.0" />
+    </rowConstraints>
+    <children>
+        <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <bottom>
+                <GridPane hgap="8.0" vgap="8.0" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+               <children>
+                  <Label text="x0" />
+                  <Label text="y0" GridPane.rowIndex="1" />
+                  <Label prefHeight="16.0" prefWidth="34.0" text="N" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="x max" GridPane.columnIndex="2" />
+                  <BorderPane prefHeight="30.0" prefWidth="479.0" GridPane.columnSpan="4" GridPane.rowIndex="2">
+                     <center>
+                        <Button fx:id="draw" mnemonicParsing="false" onAction="#listener" text="Draw" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <TextField id="y0" fx:id="y0" text="1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField id="x0" text="1" GridPane.columnIndex="1" fx:id="x0" />
+                  <TextField id="n" fx:id="n" text="100" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField id="xmax" text="6" GridPane.columnIndex="3" fx:id="xmax" />
+               </children>
+               <BorderPane.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </BorderPane.margin>
+                </GridPane>
+            </bottom>
+            <center>
+                <GridPane BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="50.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" percentHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" percentHeight="50.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <LineChart id="solution" fx:id="solution" prefHeight="348.0" prefWidth="228.0" GridPane.rowSpan="2">
+                            <xAxis>
+                                <NumberAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                        <LineChart id="local_error" fx:id="local_error" prefHeight="348.0" prefWidth="228.0" GridPane.columnIndex="1" GridPane.rowSpan="1">
+                            <xAxis>
+                                <NumberAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+
+                        <LineChart id="local_error_n" fx:id="local_error_n" prefHeight="133.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="1">
+                            <xAxis>
+                                <NumberAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+
+                    </children>
+                </GridPane>
+            </center>
+        </BorderPane>
+    </children>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+</GridPane>
